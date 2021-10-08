@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChessDbLib.Models;
+using System;
 
 namespace ChessDb
 {
@@ -6,7 +7,7 @@ namespace ChessDb
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var MagnusCarlsen = new Player
         }
     }
 }
