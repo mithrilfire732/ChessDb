@@ -7,14 +7,29 @@ using System.Threading.Tasks;
 
 namespace ChessDbLib.Models
 {
-    public class ChessDbContext :DbContext
+    public class ChessDbContext : DbContext
     {
         //DbSets here
-        
-        
-        public override void OnModelCreating(ModelBuilder builder)
+        public virtual DbSet<Player> Players { get; set; }
+
+        public virtual DbSet<Tournament> Tournaments { get; set; }
+
+
+
+
+
+        public ChessDbContext() { }
+        public ChessDbContext(DbContextOptions<ChessDbContext> options) // what does this do?
+            :base(options)
+        { }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
-            builder.Entity<Player>
+            if (!builder.IsConfigured)
+            {
+                var connStr = "server=localhost\\sqlexpress;database=ChessTourDb;trusted_connection=true;";
+                builder.UseSqlServer(connStr);
+            }
         }
     }
 }
