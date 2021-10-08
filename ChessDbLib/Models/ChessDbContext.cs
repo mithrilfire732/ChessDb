@@ -14,7 +14,7 @@ namespace ChessDbLib.Models
 
         public virtual DbSet<Tournament> Tournaments { get; set; }
 
-
+        public virtual DbSet<Game> Games { get; set; }
 
 
 

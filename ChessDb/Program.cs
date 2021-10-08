@@ -7,7 +7,7 @@ namespace ChessDb
     {
         static void Main(string[] args)
         {
-            var MagnusCarlsen = new Player
+            var MagnusCarlsen = new Player();
         }
     }
 }
